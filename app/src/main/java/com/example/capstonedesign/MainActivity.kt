@@ -13,15 +13,24 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
+        override fun onCreate(savedInstanceState: Bundle?) {
+                super.onCreate(savedInstanceState)
+                setContentView(R.layout.activity_main)
 
-            setSupportActionBar(toolbar)
-            //툴바 기존 타이틀 지우기
-            supportActionBar?.setDisplayShowTitleEnabled(false)
-            //뒤로가기 버튼
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+                setSupportActionBar(toolbar)
+                //툴바 기존 타이틀 지우기
+                supportActionBar?.setDisplayShowTitleEnabled(false)
+                //뒤로가기 버튼
+                supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+                btn_registration.setOnClickListener {
+                    AlertDialog.Builder(this)
+                        .setTitle("지금 바로 신고하시겠습니까?")
+                        .setPositiveButton("신고하기") { dialogInterface: DialogInterface, i: Int -> }
+                        .setNegativeButton("나중에 신고") { dialogInterface: DialogInterface, i: Int -> }
+                        .show()
+                }
+
         }
 
         override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -42,15 +51,14 @@ class MainActivity : AppCompatActivity() {
                     .setPositiveButton("종료") { dialogInterface: DialogInterface, i: Int -> finish() }
                     .setNegativeButton("취소") { dialogInterface: DialogInterface, i: Int -> }
                     .show()
-//                finish()
                 return true
             }
+
             else -> {
                 return super.onOptionsItemSelected(item)
             }
         }
     }
-
         var waitTime = 0L
         override fun onBackPressed() {
 
