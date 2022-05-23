@@ -80,28 +80,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/editText2" />
 
-    <EditText
-        android:id="@+id/editText4"
+    <TextView
+        android:id="@+id/et_calendar_select"
         android:layout_width="180dp"
         android:layout_height="55dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/edittext_border"
-        android:hint="발생일시입력"
+        android:text="발생일시입력"
+        android:textSize="20dp"
+        android:gravity="left"
 
-        app:layout_constraintEnd_toStartOf="@+id/editText5"
+        app:layout_constraintEnd_toStartOf="@+id/et_time_select"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editText2" />
 
-    <EditText
-        android:id="@+id/editText5"
+    <TextView
+        android:id="@+id/et_time_select"
         android:layout_width="180dp"
         android:layout_height="55dp"
         android:background="@drawable/edittext_border"
-        android:hint="발생시각입력"
+        android:text="발생시각입력"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:textColor="#8a8a8a"
 
-        app:layout_constraintBottom_toBottomOf="@+id/editText4"
+        app:layout_constraintBottom_toBottomOf="@+id/et_calendar_select"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText4" />
+        app:layout_constraintStart_toEndOf="@+id/et_calendar_select" />
 
     <TextView
         android:id="@+id/textView1"
@@ -151,8 +156,8 @@
         android:textSize="15dp"
         android:textStyle="bold"
 
-        app:layout_constraintBottom_toTopOf="@+id/editText4"
-        app:layout_constraintStart_toStartOf="@+id/editText4" />
+        app:layout_constraintBottom_toTopOf="@+id/et_calendar_select"
+        app:layout_constraintStart_toStartOf="@+id/et_calendar_select" />
 
     <TextView
         android:id="@+id/textView5"
@@ -164,8 +169,8 @@
         android:textSize="15dp"
         android:textStyle="bold"
 
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
-        app:layout_constraintStart_toStartOf="@+id/editText5" />
+        app:layout_constraintBottom_toTopOf="@+id/et_time_select"
+        app:layout_constraintStart_toStartOf="@+id/et_time_select" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
@@ -179,7 +184,7 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/et_calendar_select" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button2"
