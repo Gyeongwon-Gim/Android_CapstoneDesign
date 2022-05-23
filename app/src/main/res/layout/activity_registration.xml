@@ -21,8 +21,8 @@
 
     <VideoView
         android:id="@+id/videoView"
-        android:layout_width="355dp"
-        android:layout_height="215dp"
+        android:layout_width="300dp"
+        android:layout_height="190dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="50dp"
 
@@ -32,36 +32,37 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 
+    <!--    <View-->
+<!--        android:id="@+id/line"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="0.5dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="ffffff"-->
+
+<!--        app:layout_constraintBottom_toTopOf="@+id/editText2"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editText1" />-->
+
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="380dp"
+        android:layout_width="318dp"
         android:layout_height="55dp"
         android:background="@drawable/edittext_border"
         android:hint="위반위치입력"
 
-        app:layout_constraintBottom_toTopOf="@+id/line"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/videoView" />
 
-    <View
-        android:id="@+id/line"
-        android:layout_width="wrap_content"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="20dp"
-        android:background="#8f8f8f"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
-        />
-
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="180dp"
+        android:layout_width="150dp"
         android:layout_height="55dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/edittext_border"
         android:hint="차량번호입력"
 
@@ -71,7 +72,7 @@
 
     <EditText
         android:id="@+id/editText3"
-        android:layout_width="180dp"
+        android:layout_width="150dp"
         android:layout_height="55dp"
         android:background="@drawable/edittext_border"
         android:hint="위반사항입력"
@@ -82,9 +83,10 @@
 
     <TextView
         android:id="@+id/et_calendar_select"
-        android:layout_width="180dp"
+        android:layout_width="150dp"
         android:layout_height="55dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/edittext_border"
         android:text="발생일시입력"
         android:textSize="20dp"
@@ -96,7 +98,7 @@
 
     <TextView
         android:id="@+id/et_time_select"
-        android:layout_width="180dp"
+        android:layout_width="150dp"
         android:layout_height="55dp"
         android:background="@drawable/edittext_border"
         android:text="발생시각입력"
@@ -124,7 +126,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="4dp"
         android:text="차량번호"
         android:textColor="@color/black"
         android:textSize="15dp"
@@ -176,12 +178,14 @@
         android:id="@+id/button"
         android:layout_width="160dp"
         android:layout_height="75dp"
-        android:layout_marginStart="28dp"
+
         android:text="삭제하기"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
 
+
+        app:layout_constraintEnd_toStartOf="@+id/btn_registration_registration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_calendar_select" />
@@ -196,7 +200,8 @@
         android:textSize="20dp"
         android:textStyle="bold"
 
-        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@id/et_time_select"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button" />
 

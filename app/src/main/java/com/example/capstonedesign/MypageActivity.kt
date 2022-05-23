@@ -1,9 +1,12 @@
 package com.example.capstonedesign
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_mypage.*
 
@@ -21,14 +24,29 @@ class MypageActivity : AppCompatActivity() {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
             //신고하기 페이지로 이동. 페이지가 잘 작동하는지 확인하기 위해 만들어둠. (나중에 없앨 예정)
-            btn_goto_registration.setOnClickListener {
-                val nextIntent = Intent(this, RegistrationActivity::class.java)
-                startActivity(nextIntent)
-            }
+//            btn_goto_registration.setOnClickListener {
+//                val nextIntent = Intent(this, RegistrationActivity::class.java)
+//                startActivity(nextIntent)
+//            }
         }
 
         override fun onCreateOptionsMenu(menu: Menu?): Boolean {
             menuInflater.inflate(R.menu.toolbar_menu_mypage, menu)
             return true
+        }
+
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            //신고하기 페이지로 이동
+            when (item.getItemId()) {
+                R.id.singo -> {
+                    val intent = Intent(this, RegistrationActivity::class.java)
+                    startActivity(intent)
+                    return true
+                }
+
+                else -> {
+                    return super.onOptionsItemSelected(item)
+                }
+            }
         }
 }

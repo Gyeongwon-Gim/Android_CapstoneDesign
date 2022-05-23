@@ -2,10 +2,10 @@ package com.example.capstonedesign
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
@@ -39,26 +39,26 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.getItemId()) {
-            R.id.action_search -> {
-                val intent = Intent(this, MypageActivity::class.java)
-                startActivity(intent)
-                return true
-            }
-            android.R.id.home-> {
-                AlertDialog.Builder(this)
-                    .setTitle("앱을 종료하시겠습니까?")
-                    .setPositiveButton("종료") { dialogInterface: DialogInterface, i: Int -> finish() }
-                    .setNegativeButton("취소") { dialogInterface: DialogInterface, i: Int -> }
-                    .show()
-                return true
-            }
-
-            else -> {
-                return super.onOptionsItemSelected(item)
+            when (item.getItemId()) {
+                R.id.action_search -> {
+                    val intent = Intent(this, MypageActivity::class.java)
+                    startActivity(intent)
+                    return true
+                }
+                android.R.id.home-> {
+                    AlertDialog.Builder(this)
+                        .setTitle("앱을 종료하시겠습니까?")
+                        .setPositiveButton("종료") { dialogInterface: DialogInterface, i: Int -> finish() }
+                        .setNegativeButton("취소") { dialogInterface: DialogInterface, i: Int -> }
+                        .show()
+                    return true
+                }
+                else -> {
+                    return super.onOptionsItemSelected(item)
+                }
             }
         }
-    }
+
         var waitTime = 0L
         override fun onBackPressed() {
 
